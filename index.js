@@ -1,9 +1,36 @@
-l = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-l.reverse();
+
+l = []
+
+for (let p = 1; p <= 100; p++){
+  l.push(p)
+
+};
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+shuffle(l);
+
+
 console.log(l)
 wrapper = document.querySelector('.main')
 // console.log(wrapper)
-wrapper.style.backgroundColor = "orange"
+wrapper.style.backgroundColor = "#1AC472"
 
 
 // for (let x = 0; x < l.length; x++){
@@ -49,7 +76,7 @@ setTimeout(async () => {
         s.style.backgroundColor = "black";
         wrapper.appendChild(s)
       }
-      await sleep(100)
+      await sleep(25)
       i++
     };
 
